@@ -248,14 +248,17 @@ export function HomeContent({ students }) {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={800}
-                  height={400}
-                  className="w-full object-cover !h-[300px]"
-                  priority
-                />
+                {project?.image && (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={800}
+                    height={400}
+                    className="w-full object-cover !h-[300px]"
+                    priority
+                  />
+                )}
+
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
                     {project.title}
