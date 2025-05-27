@@ -5,6 +5,39 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+npm i
+# then
+npx prisma generate
+# then
+create file .env and paste the text below into the .env file
+# Recommended for most uses
+DATABASE_URL=postgres://neondb_owner:9O7sXhxoyQeC@ep-nameless-bush-a1n78tt4-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+
+# For uses requiring a connection without pgbouncer
+DATABASE_URL_UNPOOLED=postgresql://neondb_owner:9O7sXhxoyQeC@ep-nameless-bush-a1n78tt4.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+
+# Parameters for constructing your own connection string
+PGHOST=ep-nameless-bush-a1n78tt4-pooler.ap-southeast-1.aws.neon.tech
+PGHOST_UNPOOLED=ep-nameless-bush-a1n78tt4.ap-southeast-1.aws.neon.tech
+PGUSER=neondb_owner
+PGDATABASE=neondb
+PGPASSWORD=9O7sXhxoyQeC
+
+# Parameters for Vercel Postgres Templates
+POSTGRES_URL=postgres://neondb_owner:9O7sXhxoyQeC@ep-nameless-bush-a1n78tt4-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+POSTGRES_URL_NON_POOLING=postgres://neondb_owner:9O7sXhxoyQeC@ep-nameless-bush-a1n78tt4.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+POSTGRES_USER=neondb_owner
+POSTGRES_HOST=ep-nameless-bush-a1n78tt4-pooler.ap-southeast-1.aws.neon.tech
+POSTGRES_PASSWORD=9O7sXhxoyQeC
+POSTGRES_DATABASE=neondb
+POSTGRES_URL_NO_SSL=postgres://neondb_owner:9O7sXhxoyQeC@ep-nameless-bush-a1n78tt4-pooler.ap-southeast-1.aws.neon.tech/neondb
+POSTGRES_PRISMA_URL=postgres://neondb_owner:9O7sXhxoyQeC@ep-nameless-bush-a1n78tt4-pooler.ap-southeast-1.aws.neon.tech/neondb?pgbouncer=true&connect_timeout=15&sslmode=require
+
+# Neon Auth environment variables for Next.js
+NEXT_PUBLIC_STACK_PROJECT_ID=****************************
+NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY=****************************************
+STACK_SECRET_SERVER_KEY=***********************
+# then
 npm run dev
 # or
 yarn dev
